@@ -10,8 +10,8 @@ The MPU-9250 is a 9 degree of freedom (DOF) inertial measurement unit (IMU) used
 ## Application Notes
 - SCL and SDA buses must be pulled up to 3.3V rail with 4.7k resistor before using it. Otherwise device cannot be accessed!
 - Device address can be changed due to AD0/SDO pin state.
-    - 0xD0 when AD0 grounded.
-    - 0xD2 when AD0 pulled to VDD.
+    - `0xD0` when AD0 grounded.
+    - `0xD2` when AD0 pulled to VDD.
 
 
 ## About
