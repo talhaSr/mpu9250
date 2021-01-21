@@ -1,6 +1,7 @@
 # MPU9250 9-axis Inertial Measurement Unit
 
 ![Licence](https://img.shields.io/badge/License-GPL--3.0-orange)
+
 The MPU-9250 is a 9 degree of freedom (DOF) inertial measurement unit (IMU) used to read acceleration, angular velocity, and magnetic field in all three dimensions.
 
  ## InvenSense MPU9250 IC Pinout
