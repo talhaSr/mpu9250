@@ -12,9 +12,12 @@
 #include "main.h"
 #include "MPU9250.h"
 
+#define PI	3.14159265359f
+
 /* Define the I2C Handler's name according to I2C port in use */
 extern I2C_HandleTypeDef hi2c1;
 
+static inline float deg2rad(float x);
 
 MPU9250_Result_t MPU9250_Init(MPU9250_t *MPU9250, MPU9250_Device_t dev, MPU9250_Accel_Scale_t accScale, MPU9250_Gyro_Scale_t gyroScale, MPU9250_Mag_Scale_t magScale)
 {
@@ -208,9 +211,9 @@ MPU9250_Result_t MPU9250_ReadMag(MPU9250_t *MPU9250)
 			MPU9250->mag_raw[1] = ((int16_t)data[3] << 8) | data[2];
 			MPU9250->mag_raw[2] = ((int16_t)data[5] << 8) | data[4];
 
-			MPU9250->mag[0] = (float)MPU9250->mag_raw[0] * MPU9250->magMult;
-			MPU9250->mag[1] = (float)MPU9250->mag_raw[1] * MPU9250->magMult;
-			MPU9250->mag[2] = (float)MPU9250->mag_raw[2] * MPU9250->magMult;
+			MPU9250->mag[0] = deg2rad((float)MPU9250->mag_raw[0] * MPU9250->magMult);
+			MPU9250->mag[1] = deg2rad((float)MPU9250->mag_raw[1] * MPU9250->magMult);
+			MPU9250->mag[2] = deg2rad((float)MPU9250->mag_raw[2] * MPU9250->magMult);
 
 			return MPU9250_RESULT_OK;
 		}
@@ -316,4 +319,9 @@ MPU9250_Result_t isMPU9250Ready(I2C_HandleTypeDef *hi2c1, uint8_t device_addr)
 		return MPU9250_RESULT_NC;
 
 	return MPU9250_RESULT_OK;
+}
+
+static inline float deg2rad(float x)
+{
+	return ((PI / 180.0f) * x);
 }
