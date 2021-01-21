@@ -1,2 +1,6 @@
-# mpu9250
- MPU9250 9-axis IMU Library written in C for STM32 Environment
+# MPU9250
+
+
+## About
+
+ This library is created for STM32 development environment and can be used only with STM32F series microcontrollers.
