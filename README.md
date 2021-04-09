@@ -5,7 +5,7 @@
 The MPU-9250 is a 9 degree of freedom (DOF) inertial measurement unit (IMU) used to read acceleration, angular velocity, and magnetic field in all three dimensions.
 
  ## InvenSense MPU9250 IC Pinout
-![Sensor](https://components101.com/sites/default/files/inline-images/MPU9250-Pinout.png)
+![Sensor](https://i.pinimg.com/originals/81/bf/30/81bf303177cdc60588ac92b4c350f6c4.png)
 
 ## Application Notes
 - SCL and SDA buses must be pulled up to 3.3V rail with 4.7k resistor before using it. Otherwise device cannot be accessed!
