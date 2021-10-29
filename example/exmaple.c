@@ -33,13 +33,13 @@ HAL_StatusTypeDef whoAmI_Check(MPU9250_t *mpu9250)
 {
 	uint8_t data;
 	/* MPU9250 Who Am I Register Check */
-	if (readByte(&hi2c, mpu9250.I2C_Addr, WHO_AM_I, &data) != HAL_OK)
+	if (readByte(&hi2c1, mpu9250->I2C_Addr, WHO_AM_I, &data) != HAL_OK)
 	{
 		if (data != 0x71)
 			return HAL_ERROR;
 	}
 	/* AK8963 Who Am I Register Check */
-	if (readByte(&hi2c, mpu9250.I2C_Addr_Mag, WIA, &data) != HAL_OK)
+	if (readByte(&hi2c1, mpu9250->I2C_Addr_Mag, WIA, &data) != HAL_OK)
 	{
 		if (data != 0x48)
 			return HAL_ERROR;
